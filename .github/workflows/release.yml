@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags: [ v* ]
+
+jobs:
+  release:
+    runs-on: macos-10.15
+    timeout-minutes: 10
+    steps:
+      - name: "Checkout Project"
+        uses: actions/checkout@v2
+
+      - name: "Select Xcode 12.0.1"
+        uses: devbotsxyz/xcode-select@master
+        with:
+          version: "12.0.0"
+
+      - name: "Import Certificate: Development"
+        uses: devbotsxyz/xcode-import-certificate@master
+        with:
+          certificate-data: ${{ secrets.DEVELOPMENT_CERTIFICATE_DATA }}
+          certificate-passphrase: ${{ secrets.DEVELOPMENT_CERTIFICATE_PASSPHRASE }}
+          keychain-name: devbotsxyz-example-macos-rings
+          keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
+
+      - name: Run Unit Tests
+        uses: devbotsxyz/xcode-test@master
+        with:
+          constraints: |
+            only-testing:HelloMacTests
+            skip-testing:HelloMacTests/HelloMacTests/testOnePlusOneIsThree
+
+      - name: Run UI Tests
+        uses: devbotsxyz/xcode-test@master
+        with:
+          constraints: only-testing:HelloMacUITests
+
+      - name: "Archive"
+        uses: devbotsxyz/xcode-archive@master
+        with:
+          scheme: HelloMac
+
+      - name: "Import Certificate: Distribution"
+        uses: devbotsxyz/xcode-import-certificate@master
+        with:
+          certificate-data: ${{ secrets.DISTRIBUTION_CERTIFICATE_DATA }}
+          certificate-passphrase: ${{ secrets.DISTRIBUTION_CERTIFICATE_PASSPHRASE }}
+          keychain-name: devbotsxyz-example-macos-rings
+          keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
+
+      - name: "Export & Sign Release Build"
+        uses: devbotsxyz/xcode-export-archive@master
