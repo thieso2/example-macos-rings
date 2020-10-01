@@ -17,6 +17,10 @@ jobs:
         with:
           version: "12.0.0"
 
+      #
+      # First we do a development build that we archive into an .xcarchive.
+      #
+
       - name: "Import Certificate: Development"
         uses: devbotsxyz/xcode-import-certificate@master
         with:
@@ -27,8 +31,12 @@ jobs:
 
       - name: "Archive"
         uses: devbotsxyz/xcode-archive@master
-        with:
-          scheme: HelloMac
+
+      #
+      # Next ask Xcode to export the product from the archived build we just
+      # created. This will also re-sign the application with the distribution
+      # certificate. (Developer ID)
+      #
 
       - name: "Import Certificate: Distribution"
         uses: devbotsxyz/xcode-import-certificate@master
@@ -40,6 +48,10 @@ jobs:
 
       - name: "Export & Sign Release Build"
         uses: devbotsxyz/xcode-export-archive@master
+
+      #
+      # Now send the product to Apple's notarization service.
+      #
 
       - name: "Notarize Release Build"
         uses: devbotsxyz/xcode-notarize@master
