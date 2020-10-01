@@ -25,12 +25,12 @@ jobs:
           keychain-name: devbotsxyz-example-macos-rings
           keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
 
-      - name: Run Unit Tests
-        uses: devbotsxyz/xcode-test@master
-        with:
-          constraints: |
-            only-testing:HelloMacTests
-            skip-testing:HelloMacTests/HelloMacTests/testOnePlusOneIsThree
+      # - name: Run Unit Tests
+      #   uses: devbotsxyz/xcode-test@master
+      #   with:
+      #     constraints: |
+      #       only-testing:HelloMacTests
+      #       skip-testing:HelloMacTests/HelloMacTests/testOnePlusOneIsThree
 
       - name: Run UI Tests
         uses: devbotsxyz/xcode-test@master
