@@ -72,7 +72,8 @@ jobs:
           product-path: "Export/Rings.app"
 
       #
-      # Upload to the Release
+      # Zip up the app and add it to the GitHub Release as a
+      # downloadable asset.
       #
 
       - name: Package for Distribution
