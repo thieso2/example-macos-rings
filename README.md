@@ -12,3 +12,4 @@ Before you run the sample code project in Xcode:
 
 * Use Xcode 11 beta.
 * To run on a device, chose your development team in the Signing and Capabilities tab of the target settings.
+
