@@ -28,6 +28,7 @@
 		8D5425B08D54246000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		8D5646D08D564CF000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		E0455E42228B5B7C00B0D14C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8508DDF2526669C00423309 /* Rings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rings.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 		577BFEA12285B22800820E88 /* Rings */ = {
 			isa = PBXGroup;
 			children = (
+				F8508DDF2526669C00423309 /* Rings.entitlements */,
 				5794A44C2286C0AF008C46C8 /* Model.swift */,
 				577BFEA42285B22800820E88 /* ContentView.swift */,
 				577BFEB42285B27E00820E88 /* WedgeView.swift */,
@@ -303,11 +305,13 @@
 			baseConfigurationReference = 8D5425B08D54246000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rings/Rings.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COMPILER_INDEX_STORE_ENABLE = NO;
 				DEVELOPMENT_TEAM = 553QKZD2RX;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = 1;
 				INFOPLIST_FILE = Rings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,11 +331,13 @@
 			baseConfigurationReference = 8D5425B08D54246000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Rings/Rings.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COMPILER_INDEX_STORE_ENABLE = NO;
 				DEVELOPMENT_TEAM = 553QKZD2RX;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = 1;
 				INFOPLIST_FILE = Rings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
