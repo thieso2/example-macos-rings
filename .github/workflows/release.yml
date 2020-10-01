@@ -52,3 +52,10 @@ jobs:
 
       - name: "Export & Sign Release Build"
         uses: devbotsxyz/xcode-export-archive@master
+
+      - name: "Notarize Release Build"
+        uses: devbotsxyz/xcode-notarize@master
+        with:
+          product-path: "Export/HelloMac.app"
+          username: ${{ secrets.NOTARIZATION_USERNAME }}
+          password: ${{ secrets.NOTARIZATION_PASSWORD }}

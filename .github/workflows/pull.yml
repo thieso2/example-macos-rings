@@ -25,10 +25,3 @@ jobs:
 
       - name: "Archive"
         uses: devbotsxyz/xcode-archive@master
-
-      - name: "Notarize Release Build"
-        uses: ./.github/actions/xcode-notarize
-        with:
-          product-path: "Export/HelloMac.app"
-          username: ${{ secrets.NOTARIZATION_USERNAME }}
-          password: ${{ secrets.NOTARIZATION_PASSWORD }}
