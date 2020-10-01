@@ -1,3 +1,8 @@
+This is a demo application for the DevBots GitHub Actions for Xcode.
+
+
+# Original README Below
+
 # Building Custom Views in SwiftUI
 
 Create a custom view with data driven transitions and animations in SwiftUI.
@@ -12,4 +17,3 @@ Before you run the sample code project in Xcode:
 
 * Use Xcode 11 beta.
 * To run on a device, chose your development team in the Signing and Capabilities tab of the target settings.
-
