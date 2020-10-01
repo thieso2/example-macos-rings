@@ -67,7 +67,7 @@ jobs:
           appstore-connect-password: ${{ secrets.NOTARIZATION_PASSWORD }}
 
       - name: "Staple Release Build"
-        uses: devbotsxyz/xcode-staple@master
+        uses: devbotsxyz/xcode-staple@main
         with:
           product-path: "Export/Rings.app"
 
