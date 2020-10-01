@@ -61,6 +61,6 @@ jobs:
       - name: "Notarize Release Build"
         uses: devbotsxyz/xcode-notarize@master
         with:
-          product-path: "Export/HelloMac.app"
-          username: ${{ secrets.NOTARIZATION_USERNAME }}
-          password: ${{ secrets.NOTARIZATION_PASSWORD }}
+          product-path: "Export/Rings.app"
+          appstore-connect-username: ${{ secrets.NOTARIZATION_USERNAME }}
+          appstore-connect-password: ${{ secrets.NOTARIZATION_PASSWORD }}
