@@ -55,7 +55,8 @@ jobs:
         uses: devbotsxyz/xcode-export-archive@master
 
       #
-      # Now send the product to Apple's notarization service.
+      # Now send the product to Apple's notarization service and then
+      # staple it.
       #
 
       - name: "Notarize Release Build"
@@ -64,3 +65,19 @@ jobs:
           product-path: "Export/Rings.app"
           appstore-connect-username: ${{ secrets.NOTARIZATION_USERNAME }}
           appstore-connect-password: ${{ secrets.NOTARIZATION_PASSWORD }}
+
+      # TODO Stapling! "xcode-staple" with: "product-path: Export/Rings.app"
+
+      #
+      # Upload to the Release
+      #
+
+      - name: Package for Distribution
+        run: ditto -V -c -k --keepParent "Export/Rings.app" "Rings.zip"
+
+      - name: Release app
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Rings.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
