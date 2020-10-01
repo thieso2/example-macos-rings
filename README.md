@@ -1,5 +1,7 @@
 This is a demo application for the DevBots GitHub Actions for Xcode.
 
+See [.github/workflows/pull.yml](.github/workflows/pull.yml) for details what this workflow looks like.
+
 
 # Original README Below
 
