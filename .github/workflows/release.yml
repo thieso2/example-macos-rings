@@ -66,7 +66,10 @@ jobs:
           appstore-connect-username: ${{ secrets.NOTARIZATION_USERNAME }}
           appstore-connect-password: ${{ secrets.NOTARIZATION_PASSWORD }}
 
-      # TODO Stapling! "xcode-staple" with: "product-path: Export/Rings.app"
+      - name: "Staple Release Build"
+        uses: devbotsxyz/xcode-staple@master
+        with:
+          product-path: "Export/Rings.app"
 
       #
       # Upload to the Release
