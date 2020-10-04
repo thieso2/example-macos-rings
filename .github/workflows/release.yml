@@ -16,7 +16,7 @@ jobs:
       # Setup
       #
 
-      - name: "Select Xcode 12.0.1"
+      - name: "Select Xcode 12.0.0"
         uses: devbotsxyz/xcode-select@master
         with:
           version: "12.0.0"
@@ -60,7 +60,7 @@ jobs:
       #
 
       - name: "Notarize Release Build"
-        uses: devbotsxyz/xcode-notarize@master
+        uses: devbotsxyz/xcode-notarize@main
         with:
           product-path: "Export/Rings.app"
           appstore-connect-username: ${{ secrets.NOTARIZATION_USERNAME }}
