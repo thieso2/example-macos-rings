@@ -18,7 +18,7 @@ jobs:
           version: "12.0.0"
 
       - name: "Import Certificate: Development"
-        uses: devbotsxyz/import-signing-certificate@main
+        uses: devbotsxyz/import-signing-certificate@v1
         with:
           certificate-data: ${{ secrets.DEVELOPMENT_CERTIFICATE_DATA }}
           certificate-passphrase: ${{ secrets.DEVELOPMENT_CERTIFICATE_PASSPHRASE }}
