@@ -25,4 +25,4 @@ jobs:
           keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
 
       - name: "Build & Archive"
-        uses: devbotsxyz/xcode-archive@master
+        uses: devbotsxyz/xcode-archive@v1
