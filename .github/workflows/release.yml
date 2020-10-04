@@ -60,7 +60,7 @@ jobs:
       #
 
       - name: "Notarize Release Build"
-        uses: devbotsxyz/xcode-notarize@main
+        uses: devbotsxyz/xcode-notarize@v1
         with:
           product-path: "Export/Rings.app"
           appstore-connect-username: ${{ secrets.NOTARIZATION_USERNAME }}
