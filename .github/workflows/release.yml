@@ -22,19 +22,17 @@ jobs:
           version: "12.0.0"
 
       - name: "Import Certificate: Development"
-        uses: devbotsxyz/xcode-import-certificate@master
+        uses: devbotsxyz/import-signing-certificate@main
         with:
           certificate-data: ${{ secrets.DEVELOPMENT_CERTIFICATE_DATA }}
           certificate-passphrase: ${{ secrets.DEVELOPMENT_CERTIFICATE_PASSPHRASE }}
-          keychain-name: devbotsxyz-example-macos-rings
           keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
 
       - name: "Import Certificate: Distribution"
-        uses: devbotsxyz/xcode-import-certificate@master
+        uses: devbotsxyz/import-signing-certificate@main
         with:
           certificate-data: ${{ secrets.DISTRIBUTION_CERTIFICATE_DATA }}
           certificate-passphrase: ${{ secrets.DISTRIBUTION_CERTIFICATE_PASSPHRASE }}
-          keychain-name: devbotsxyz-example-macos-rings
           keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }}
 
       #
@@ -43,7 +41,7 @@ jobs:
       #
 
       - name: "Archive"
-        uses: devbotsxyz/xcode-archive@master
+        uses: devbotsxyz/xcode-archive@v1
 
       #
       # Next ask Xcode to export the product from the archived build
